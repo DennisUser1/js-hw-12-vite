@@ -172,10 +172,16 @@ button {
   padding: 8px 15px;
   border-radius: 8px;
   transition: .3s;
+  float: none;
+  margin: 24px auto;
 }
 
 .load-more:hover {
   background-color: rgba(108, 140, 255, 1);
+}
+
+button:active {
+  box-shadow: 0px 0px 12px 0px rgb(43, 43, 43);
 }
 
 .btn-pagination {
@@ -204,7 +210,7 @@ button {
 }
 
 .loader:after {
-  box-shadow: 0 2px 0 #FF3D00 inset;
+  box-shadow: 0 2px 0 #0013a5 inset;
   animation: rotate 2s linear infinite;
 }
 

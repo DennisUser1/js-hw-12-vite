@@ -21,6 +21,10 @@ export function renderGallery(images) {
     </li>
   `).join('');
 
-  gallery.innerHTML = markup;
-  new SimpleLightbox('.gallery a').refresh();
-}
+  gallery.innerHTML += markup;
+  const lightbox = new SimpleLightbox('.gallery a', {
+    captionsData: 'alt',
+    captionDelay: 250,
+  });
+  lightbox.refresh();
+};

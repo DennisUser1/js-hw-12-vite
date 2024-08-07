@@ -27,7 +27,7 @@ form.addEventListener('submit', async event => {
       timeout: 3000,
     });
     return;
-  }
+  };
 
   loadMoreButton.style.display = 'none';
   loader.style.display = 'block';
@@ -36,7 +36,7 @@ form.addEventListener('submit', async event => {
     const data = await fetchImages(currentQuery, currentPage);
     loader.style.display = 'none';
 
-    if (data.totalHits === 0) {
+    if (data.totalHits == 0) {
       iziToast.warning({
         title: 'Warning',
         position: 'topRight',
@@ -44,7 +44,7 @@ form.addEventListener('submit', async event => {
         timeout: 3000,
       });
       return;
-    }
+    };
 
     iziToast.success({
       title: 'Success',
@@ -58,7 +58,7 @@ form.addEventListener('submit', async event => {
 
     if (data.totalHits > data.hits.length) {
       loadMoreButton.style.display = 'block';
-    }
+    };
   } catch (error) {
     loader.style.display = 'none';
     iziToast.error({
@@ -67,12 +67,12 @@ form.addEventListener('submit', async event => {
       message: 'Sorry, there is no connection to the server. Please try again later!',
       timeout: 3000,
     });
-  }
+  };
 });
 
 loadMoreButton.addEventListener('click', async () => {
   currentPage += 1;
-  loader.style.display = 'block';
+  loader.style.display = 'block';  
 
   try {
     const data = await fetchImages(currentQuery, currentPage);
@@ -88,7 +88,7 @@ loadMoreButton.addEventListener('click', async () => {
         message: "We're sorry, but you've reached the end of search results.",
         timeout: 3000,
       });
-    }
+    };
 
     const { height: cardHeight } = document
       .querySelector('.gallery')
@@ -106,5 +106,5 @@ loadMoreButton.addEventListener('click', async () => {
       message: 'Sorry, there is no connection to the server. Please try again later!',
       timeout: 3000,
     });
-  }
+  };
 });
